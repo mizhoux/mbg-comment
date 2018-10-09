@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-public class MySQLCommentGenerator extends SimpleCommentGenerator {
+public class MySQLCommentGenerator extends EmptyCommentGenerator {
 
     private Properties properties;
 
