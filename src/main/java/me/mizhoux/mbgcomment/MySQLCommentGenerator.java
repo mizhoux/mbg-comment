@@ -11,7 +11,7 @@ import java.util.Properties;
 
 public class MySQLCommentGenerator extends EmptyCommentGenerator {
 
-    private Properties properties;
+    private final Properties properties;
 
     public MySQLCommentGenerator() {
         properties = new Properties();

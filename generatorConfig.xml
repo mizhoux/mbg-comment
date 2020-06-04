@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <!-- 指定数据库驱动的jdbc驱动jar包的位置 -->
-    <!-- 不再需要，因为 jar 包已经在 classpath 中
+    <!-- 此时不需要，因为 jar 包已经在 classpath 中
     <classPathEntry location="./mysql-connector-java-5.1.40.jar" />
     -->
 
@@ -24,23 +24,30 @@
         </commentGenerator>
 
         <!-- 配置数据库连接 -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8" userId="root" password="123456">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/test?characterEncoding=utf-8"
+                        userId="root"
+                        password="123456">
             <!-- 设置 useInformationSchema 属性为 true -->
             <property name="useInformationSchema" value="true" />
         </jdbcConnection>
 
         <!-- 生成实体的位置 -->
-        <javaModelGenerator targetPackage="me.mizhoux.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="me.mizhoux.model"
+                            targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaModelGenerator>
 
-        <!-- 生成 Mapper 接口的位置 -->
-        <sqlMapGenerator targetPackage="me.mizhoux.mapper" targetProject="src/main/java">
+        <!-- 生成 Mapper XML 的位置 -->
+        <sqlMapGenerator targetPackage="me.mizhoux.mapper"
+                         targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <!-- 生成 Mapper XML 的位置 -->
-        <javaClientGenerator targetPackage="me.mizhoux.mapper" type="XMLMAPPER" targetProject="src/main/java">
+        <!-- 生成 Mapper 接口的位置 -->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="me.mizhoux.mapper"
+                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
@@ -49,7 +56,6 @@
             <!-- generatedKey用于生成生成主键的方法 -->
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"/>
         </table>
-
     </context>
 
 </generatorConfiguration>
