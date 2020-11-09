@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <!-- 指定数据库驱动的jdbc驱动jar包的位置 -->
+    <!-- 指定数据库驱动的 jdbc 驱动 jar 包的位置 -->
     <!-- 此时不需要，因为 jar 包已经在 classpath 中
     <classPathEntry location="./mysql-connector-java-5.1.40.jar" />
     -->
@@ -53,7 +53,7 @@
 
         <!-- 设置数据库的表名和实体类名 -->
         <table tableName="t_user" domainObjectName="User">
-            <!-- generatedKey用于生成生成主键的方法 -->
+            <!-- 设置用于生成主键的方式 -->
             <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()"/>
         </table>
     </context>
